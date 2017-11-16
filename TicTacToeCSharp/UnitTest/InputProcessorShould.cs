@@ -9,12 +9,14 @@ namespace TicTacToeCSharp.UnitTest
     {
         
         [Test]
-        public void AddUserInput()
+        [TestCase(2)]
+        [TestCase(5)]
+        public void AddUserInput(int index)
         {
             var board = Enumerable.Repeat("", 9).ToArray();
             var inputProcessor = new InputProcessor();
-            inputProcessor.Add(board, 2);
-            Assert.AreEqual("O", board[2]);
+            inputProcessor.Add(board, index);
+            Assert.AreEqual("O", board[index]);
         }
     }
 }

@@ -4,7 +4,7 @@
     {
         public void Add(string[] board, int index)
         {
-            board[2] = "O";
+            board[index] = "O";
         }
     }
 }
