@@ -33,25 +33,6 @@ namespace TicTacToeCSharp.UnitTest
         }
 
         [Test]
-        public void ReturnIndexesOfAllUserInput()
-        {
-            var board = new Board
-            {
-                Squares = new[]
-                {
-                    "X", "O", "",
-                    "", "X", "O",
-                    "", "", "X"
-                },
-                XIsNext = false
-            };
-
-            var actual = _referee.GetIndexesOfAllCurrentUserInput(board);
-            var expected = new List<int>{ 0, 4, 8 };
-            Assert.AreEqual(expected, actual);
-        }
-
-        [Test]
         public void ReturnXIfXHasWonTheGame()
         {
             var board = new Board
@@ -83,6 +64,25 @@ namespace TicTacToeCSharp.UnitTest
             };
             var actual = _referee.CheckWinner(board);
             Assert.AreEqual("O", actual);
+        }
+
+        [Test]
+        public void ReturnIndexesOfAllUserInput()
+        {
+            var board = new Board
+            {
+                Squares = new[]
+                {
+                    "X", "O", "",
+                    "", "X", "O",
+                    "", "", "X"
+                },
+                XIsNext = false
+            };
+
+            var actual = _referee.GetIndexesOfAllCurrentUserInput(board);
+            var expected = new List<int>{ 0, 4, 8 };
+            Assert.AreEqual(expected, actual);
         }
     }
 }
