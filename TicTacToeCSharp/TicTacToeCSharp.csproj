@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Lib\InputProcessor.cs" />
+    <Compile Include="Lib\BoardInitialiser.cs" />
+    <Compile Include="UnitTest\BoardInitialiserShould.cs" />
     <Compile Include="UnitTest\InputProcessorShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
