@@ -18,31 +18,21 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnEmptyStringIfNoOneHasWonTheGame()
         {
-            var squares = new[]
+            var board = new Board
             {
-                "X", "O", "",
-                "", "X", "O",
-                "", "X", "O"
+                Squares = new[]
+                {
+                    "X", "O", "",
+                    "", "X", "O",
+                    "", "X", "O"
+                },
+                XIsNext = false
             };
-            var actual = _referee.CheckWinner(squares);
+            var actual = _referee.CheckWinner(board);
             Assert.AreEqual("", actual);
         }
 
         [Test]
-        public void ReturnXIfXHasWonTheGame()
-        {
-            var squares = new[]
-            {
-                "X", "O", "",
-                "", "X", "O",
-                "", "", "X"
-            };
-            var actual = _referee.CheckWinner(squares);
-            Assert.AreEqual("X", actual);
-        }
-
-        [Test]
-        [Ignore("Building from top down")]
         public void ReturnIndexesOfAllUserInput()
         {
             var board = new Board
@@ -59,6 +49,40 @@ namespace TicTacToeCSharp.UnitTest
             var actual = _referee.GetIndexesOfAllCurrentUserInput(board);
             var expected = new List<int>{ 0, 4, 8 };
             Assert.AreEqual(expected, actual);
+        }
+
+        [Test]
+        public void ReturnXIfXHasWonTheGame()
+        {
+            var board = new Board
+            {
+                Squares = new[]
+                {
+                    "X", "O", "",
+                    "", "X", "O",
+                    "", "", "X"
+                },
+                XIsNext = false
+            };
+            var actual = _referee.CheckWinner(board);
+            Assert.AreEqual("X", actual);
+        }
+
+        [Test]
+        public void ReturnOIfOHasWonTheGame()
+        {
+            var board = new Board
+            {
+                Squares = new[]
+                {
+                    "X", "O", "X",
+                    "", "O", "X",
+                    "", "O", ""
+                },
+                XIsNext = true
+            };
+            var actual = _referee.CheckWinner(board);
+            Assert.AreEqual("O", actual);
         }
     }
 }
