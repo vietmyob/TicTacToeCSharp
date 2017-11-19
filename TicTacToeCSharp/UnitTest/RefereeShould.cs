@@ -56,7 +56,7 @@ namespace TicTacToeCSharp.UnitTest
                 XIsNext = false
             };
 
-            var actual = _referee.GetIndexesOfAllRecentInput(board);
+            var actual = _referee.GetIndexesOfAllCurrentUserInput(board);
             var expected = new List<int>{ 0, 4, 8 };
             Assert.AreEqual(expected, actual);
         }

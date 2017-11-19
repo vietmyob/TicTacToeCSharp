@@ -1,4 +1,5 @@
 ﻿using NUnit.Framework;
+using TicTacToeCSharp.DTO;
 using TicTacToeCSharp.Lib;
 
 namespace TicTacToeCSharp.UnitTest
@@ -6,11 +7,11 @@ namespace TicTacToeCSharp.UnitTest
     [TestFixture]
     public class InputProcessorShould
     {
-        private BoardInitialiser _boardInitialiser;
+        private Board _board;
         [SetUp]
         public void SetUp()
         {
-            _boardInitialiser = new BoardInitialiser();
+            _board = new Board();
         }
 
         [Test]
@@ -18,10 +19,9 @@ namespace TicTacToeCSharp.UnitTest
         [TestCase(5)]
         public void AddUserInput(int index)
         {
-            var board = _boardInitialiser.Create();
             var inputProcessor = new InputProcessor();
-            inputProcessor.Add(board.Squares, index);
-            Assert.AreEqual("O", board.Squares[index]);
+            inputProcessor.Add(_board.Squares, index);
+            Assert.AreEqual("O", _board.Squares[index]);
         }
     }
 }

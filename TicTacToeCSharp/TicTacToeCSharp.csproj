@@ -48,8 +48,6 @@
   <ItemGroup>
     <Compile Include="DTO\Board.cs" />
     <Compile Include="Lib\InputProcessor.cs" />
-    <Compile Include="Lib\BoardInitialiser.cs" />
-    <Compile Include="UnitTest\BoardInitialiserShould.cs" />
     <Compile Include="Lib\InputChecker.cs" />
     <Compile Include="UnitTest\InputCheckerShould.cs" />
     <Compile Include="UnitTest\InputProcessorShould.cs" />
