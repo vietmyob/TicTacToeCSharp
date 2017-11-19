@@ -20,8 +20,8 @@ namespace TicTacToeCSharp.UnitTest
         {
             var board = _boardInitialiser.Create();
             var inputProcessor = new InputProcessor();
-            inputProcessor.Add(board, index);
-            Assert.AreEqual("O", board[index]);
+            inputProcessor.Add(board.Squares, index);
+            Assert.AreEqual("O", board.Squares[index]);
         }
     }
 }

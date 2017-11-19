@@ -11,13 +11,13 @@ namespace TicTacToeCSharp.UnitTest
         {
             var boardInitialiser = new BoardInitialiser();
             var actual = boardInitialiser.Create();
-            var expected = new string[]
+            var expected = new[]
             {
                 "", "", "",
                 "", "", "",
                 "", "", ""
             };
-            Assert.AreEqual(expected, actual);
+            Assert.AreEqual(expected, actual.Squares);
         }
     }
 }

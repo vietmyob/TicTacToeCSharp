@@ -1,13 +1,12 @@
-﻿using System;
-using System.Linq;
+﻿using TicTacToeCSharp.DTO;
 
 namespace TicTacToeCSharp.Lib
 {
     public class BoardInitialiser
     {
-        public string[] Create()
+        public Board Create()
         {
-            return Enumerable.Repeat("", 9).ToArray();
+            return new Board();
         }
     }
 }

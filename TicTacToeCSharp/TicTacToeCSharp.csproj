@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DTO\Board.cs" />
     <Compile Include="Lib\InputProcessor.cs" />
     <Compile Include="Lib\BoardInitialiser.cs" />
     <Compile Include="UnitTest\BoardInitialiserShould.cs" />
@@ -53,9 +54,14 @@
     <Compile Include="UnitTest\InputCheckerShould.cs" />
     <Compile Include="UnitTest\InputProcessorShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Lib\Referee.cs" />
+    <Compile Include="UnitTest\RefereeShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
