@@ -8,28 +8,28 @@ namespace TicTacToeCSharp.Lib
     {
         public string CheckWinner(Board board)
         {
-            var indexesOfCurrentUserInput = GetIndexesOfAllCurrentUserInput(board);
-            if (WinnerLines.Lines.Any(winnerLine => indexesOfCurrentUserInput.Contains(winnerLine[0]) &&
-                                              indexesOfCurrentUserInput.Contains(winnerLine[1]) &&
-                                              indexesOfCurrentUserInput.Contains(winnerLine[2])))
+            var indexesOfUserInputs = GetIndexesOfAllUserInputs(board);
+            if (Config.WinnerLines.Any(winnerLine => indexesOfUserInputs.Contains(winnerLine[0]) &&
+                                              indexesOfUserInputs.Contains(winnerLine[1]) &&
+                                              indexesOfUserInputs.Contains(winnerLine[2])))
             {
                 return board.XIsNext ? "O" : "X";
             }
             return string.Empty;
         }
 
-        public List<int> GetIndexesOfAllCurrentUserInput(Board board)
+        public List<int> GetIndexesOfAllUserInputs(Board board)
         {
             var mostRecentInput = board.XIsNext ? "O" : "X";
-            var indexesOfCurrentUserInput = new List<int>();
+            var indexesOfUserInputs = new List<int>();
             for (var i = 0; i < board.Squares.Length; i++)
             {
                 if (board.Squares[i] == mostRecentInput)
                 {
-                    indexesOfCurrentUserInput.Add(i);
+                    indexesOfUserInputs.Add(i);
                 }
             }
-            return indexesOfCurrentUserInput;
+            return indexesOfUserInputs;
         }
     }
 }

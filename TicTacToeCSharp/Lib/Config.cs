@@ -2,9 +2,9 @@
 
 namespace TicTacToeCSharp.Lib
 {
-    public static class WinnerLines
+    public static class Config
     {
-        public static readonly List<List<int>> Lines = new List<List<int>>
+        public static readonly List<List<int>> WinnerLines = new List<List<int>>
         {
             new List<int>() {0, 1, 2},
             new List<int>() {3, 4, 5},
