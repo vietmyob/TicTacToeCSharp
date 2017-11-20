@@ -7,6 +7,14 @@ namespace TicTacToeCSharp.UnitTest
     [TestFixture]
     public class InputCheckerShould
     {
+        private InputChecker _inputChecker;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _inputChecker = new InputChecker();
+        }
+
         [Test]
         public void ReturnErrorIfPositionIsNotEmpty()
         {
@@ -17,9 +25,22 @@ namespace TicTacToeCSharp.UnitTest
                 "", "", ""
             };
             var userInput = 1;
-            var inputChecker = new InputChecker();
-            var ex = Assert.Throws<Exception>(() => inputChecker.CheckPosition(board, userInput));
+            var ex = Assert.Throws<Exception>(() => _inputChecker.CheckPosition(board, userInput));
             Assert.That(ex.Message, Is.EqualTo("Selected postion is not empty"));
+        }
+
+        [Test]
+        public void ReturnErrorIfInputIsOutOfIndex()
+        {
+            var board = new[]
+            {
+                "", "O", "",
+                "", "", "",
+                "", "", ""
+            };
+            var userInput = 9;
+            var ex = Assert.Throws<Exception>(() => _inputChecker.IsWithinBoardRange(board, userInput));
+            Assert.That(ex.Message, Is.EqualTo("Selected postion is outside of board range"));
         }
     }
 }
