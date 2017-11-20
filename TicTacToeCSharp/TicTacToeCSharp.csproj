@@ -50,7 +50,10 @@
     <Compile Include="Lib\UserInputProcessor.cs" />
     <Compile Include="Lib\InputChecker.cs" />
     <Compile Include="Lib\BoardConsoleRenderer.cs" />
+    <Compile Include="Lib\Config.cs" />
     <Compile Include="UnitTest\BoardConsoleRendererShould.cs" />
+    <Compile Include="Lib\Computer.cs" />
+    <Compile Include="UnitTest\ComputerShould.cs" />
     <Compile Include="UnitTest\InputCheckerShould.cs" />
     <Compile Include="Lib\SquareConsoleRenderer.cs" />
     <Compile Include="UnitTest\SquareRendererShould.cs" />
