@@ -1,4 +1,4 @@
-﻿namespace TicTacToeCSharp.Lib
+﻿namespace TicTacToeCSharp.Interface
 {
     public interface IChecker
     {
