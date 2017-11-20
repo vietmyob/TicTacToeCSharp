@@ -2,8 +2,14 @@
 
 namespace TicTacToeCSharp.Lib
 {
-    public class InputChecker
+    public class InputChecker : IChecker
     {
+        public void Validate(string[] board, int userInput)
+        {
+            CheckPosition(board, userInput);
+            IsWithinBoardRange(board, userInput);
+        }
+
         public void CheckPosition(string[] board, int userInput)
         {
             if(!string.IsNullOrEmpty(board[userInput]))
