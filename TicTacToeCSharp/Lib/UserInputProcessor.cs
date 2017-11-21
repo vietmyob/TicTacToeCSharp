@@ -1,12 +1,14 @@
-﻿namespace TicTacToeCSharp.Lib
+﻿using TicTacToeCSharp.Interface;
+
+namespace TicTacToeCSharp.Lib
 {
     public class UserInputProcessor
     {
         private readonly IChecker _checker;
 
-        public UserInputProcessor()
+        public UserInputProcessor(IChecker checker)
         {
-            _checker = new InputChecker();
+            _checker = checker;
         }
 
         public void Add(string[] board, int index)

@@ -19,7 +19,7 @@ namespace TicTacToeCSharp.UnitTest
         [TestCase(5)]
         public void AddUserInput(int index)
         {
-            var inputProcessor = new UserInputProcessor();
+            var inputProcessor = new UserInputProcessor(new InputChecker());
             inputProcessor.Add(_board.Squares, index);
             Assert.AreEqual("O", _board.Squares[index]);
         }

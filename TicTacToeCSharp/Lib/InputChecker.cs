@@ -1,4 +1,5 @@
 ﻿using System;
+using TicTacToeCSharp.Interface;
 
 namespace TicTacToeCSharp.Lib
 {

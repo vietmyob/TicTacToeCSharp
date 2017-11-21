@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DTO\Board.cs" />
-    <Compile Include="Lib\IChecker.cs" />
+    <Compile Include="Interface\IChecker.cs" />
     <Compile Include="Lib\UserInputProcessor.cs" />
     <Compile Include="Lib\InputChecker.cs" />
     <Compile Include="Lib\BoardConsoleRenderer.cs" />
