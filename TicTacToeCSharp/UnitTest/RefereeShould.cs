@@ -8,11 +8,11 @@ namespace TicTacToeCSharp.UnitTest
     [TestFixture]
     public class RefereeShould
     {
-        private Referee _referee;
+        private WinnerReferee _winnerReferee;
         [SetUp]
         public void SetUp()
         {
-            _referee = new Referee();
+            _winnerReferee = new WinnerReferee();
         }
 
         [Test]
@@ -28,7 +28,7 @@ namespace TicTacToeCSharp.UnitTest
                 },
                 XIsNext = false
             };
-            var actual = _referee.CheckWinner(board);
+            var actual = _winnerReferee.CheckWinner(board, "O");
             Assert.AreEqual("", actual);
         }
 
@@ -45,7 +45,7 @@ namespace TicTacToeCSharp.UnitTest
                 },
                 XIsNext = false
             };
-            var actual = _referee.CheckWinner(board);
+            var actual = _winnerReferee.CheckWinner(board, "X");
             Assert.AreEqual("X", actual);
         }
 
@@ -62,7 +62,7 @@ namespace TicTacToeCSharp.UnitTest
                 },
                 XIsNext = true
             };
-            var actual = _referee.CheckWinner(board);
+            var actual = _winnerReferee.CheckWinner(board, "O");
             Assert.AreEqual("O", actual);
         }
 
@@ -80,7 +80,9 @@ namespace TicTacToeCSharp.UnitTest
                 XIsNext = false
             };
 
-            var actual = _referee.GetIndexesOfAllUserInputs(board);
+            var boardAnalyser = new BoardAnalyser();
+
+            var actual = boardAnalyser.GetAllIndexesOfPlayerInput(board, "X");
             var expected = new List<int>{ 0, 4, 8 };
             Assert.AreEqual(expected, actual);
         }

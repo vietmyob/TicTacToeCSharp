@@ -51,19 +51,21 @@
   <ItemGroup>
     <Compile Include="DTO\Board.cs" />
     <Compile Include="Interface\IChecker.cs" />
+    <Compile Include="Lib\BoardAnalyser.cs" />
     <Compile Include="Lib\UserInputProcessor.cs" />
     <Compile Include="Lib\InputChecker.cs" />
     <Compile Include="Lib\BoardConsoleRenderer.cs" />
     <Compile Include="Lib\Config.cs" />
+    <Compile Include="UnitTest\BoardAnalyserShould.cs" />
     <Compile Include="UnitTest\BoardConsoleRendererShould.cs" />
-    <Compile Include="Lib\Computer.cs" />
+    <Compile Include="Lib\ComputerPlayer.cs" />
     <Compile Include="UnitTest\ComputerShould.cs" />
     <Compile Include="UnitTest\InputCheckerShould.cs" />
     <Compile Include="Lib\SquareConsoleRenderer.cs" />
     <Compile Include="UnitTest\SquareRendererShould.cs" />
     <Compile Include="UnitTest\UserInputProcessorShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Lib\Referee.cs" />
+    <Compile Include="Lib\WinnerReferee.cs" />
     <Compile Include="UnitTest\RefereeShould.cs" />
   </ItemGroup>
   <ItemGroup>

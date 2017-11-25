@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using NUnit.Framework;
+﻿using NUnit.Framework;
 using TicTacToeCSharp.DTO;
 using TicTacToeCSharp.Lib;
 
@@ -11,7 +10,7 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnEightToStopUserFromWinning()
         {
-            var computer = new Computer();
+            var computer = new ComputerPlayer();
             var board = new Board
             {
                 Squares = new[]
@@ -23,14 +22,14 @@ namespace TicTacToeCSharp.UnitTest
                 XIsNext = true
             };
 
-            var computerMove = computer.Solve(board);
+            var computerMove = computer.Solve(board, "O");
             Assert.AreEqual(8, computerMove);
         }
 
         [Test]
         public void ReturnSixToStopUserFromWinning()
         {
-            var computer = new Computer();
+            var computer = new ComputerPlayer();
             var board = new Board
             {
                 Squares = new[]
@@ -42,14 +41,14 @@ namespace TicTacToeCSharp.UnitTest
                 XIsNext = true
             };
 
-            var computerMove = computer.Solve(board);
+            var computerMove = computer.Solve(board, "O");
             Assert.AreEqual(6, computerMove);
         }
 
         [Test]
         public void ReturnTwoToStopUserFromWinning()
         {
-            var computer = new Computer();
+            var computer = new ComputerPlayer();
             var board = new Board
             {
                 Squares = new[]
@@ -61,7 +60,7 @@ namespace TicTacToeCSharp.UnitTest
                 XIsNext = true
             };
 
-            var computerMove = computer.Solve(board);
+            var computerMove = computer.Solve(board, "O");
             Assert.AreEqual(2, computerMove);
         }
     }

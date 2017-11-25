@@ -11,10 +11,10 @@ namespace TicTacToeCSharp.Lib
             _checker = checker;
         }
 
-        public void Add(string[] board, int index)
+        public void Add(string[] board, int index, string humanPlayerSymbol)
         {
             _checker.Validate(board, index);
-            board[index] = "O";
+            board[index] = humanPlayerSymbol;
         }
     }
 }
