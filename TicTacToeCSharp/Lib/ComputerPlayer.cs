@@ -11,19 +11,19 @@ namespace TicTacToeCSharp.Lib
         private readonly BoardAnalyser _boardAnalyser;
         private readonly List<List<int>> _winnerLines;
         private readonly Random _random;
-        private readonly string _computerSymbol;
+        private readonly string _symbol;
 
-        public ComputerPlayer(string computerSymbol)
+        public ComputerPlayer(string symbol)
         {
             _boardAnalyser = new BoardAnalyser();
             _winnerLines = new Config().WinnerLines;
             _random = new Random();
-            _computerSymbol = computerSymbol;
+            _symbol = symbol;
         }
 
         public void Move(Board board, int index)
         {
-            board.Squares[index] = _computerSymbol;
+            board.Squares[index] = _symbol;
         }
 
         public int Solve(Board board, string humanPlayerSymbol)
