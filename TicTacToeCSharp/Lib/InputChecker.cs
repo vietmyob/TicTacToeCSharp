@@ -1,25 +1,26 @@
 ﻿using System;
+using TicTacToeCSharp.DTO;
 using TicTacToeCSharp.Interface;
 
 namespace TicTacToeCSharp.Lib
 {
     public class InputChecker : IChecker
     {
-        public void Validate(string[] board, int userInput)
+        public void Validate(Board board, int userInput)
         {
             CheckPosition(board, userInput);
             IsWithinBoardRange(board, userInput);
         }
 
-        public void CheckPosition(string[] board, int userInput)
+        public void CheckPosition(Board board, int userInput)
         {
-            if(!string.IsNullOrEmpty(board[userInput]))
+            if(!string.IsNullOrEmpty(board.Squares[userInput]))
                 throw new Exception("Selected postion is not empty");
         }
 
-        public void IsWithinBoardRange(string[] board, int userInput)
+        public void IsWithinBoardRange(Board board, int userInput)
         {
-            if (userInput < 0 || userInput > board.Length - 1)
+            if (userInput < 0 || userInput > board.Squares.Length - 1)
                 throw new Exception("Selected postion is outside of board range");
         }
     }

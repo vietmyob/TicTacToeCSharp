@@ -26,7 +26,6 @@ namespace TicTacToeCSharp.UnitTest
                     "", "X", "O",
                     "", "X", "O"
                 },
-                XIsNext = false
             };
             var actual = _winnerReferee.CheckWinner(board, "O");
             Assert.AreEqual("", actual);
@@ -43,7 +42,6 @@ namespace TicTacToeCSharp.UnitTest
                     "", "X", "O",
                     "", "", "X"
                 },
-                XIsNext = false
             };
             var actual = _winnerReferee.CheckWinner(board, "X");
             Assert.AreEqual("X", actual);
@@ -60,7 +58,6 @@ namespace TicTacToeCSharp.UnitTest
                     "", "O", "X",
                     "", "O", ""
                 },
-                XIsNext = true
             };
             var actual = _winnerReferee.CheckWinner(board, "O");
             Assert.AreEqual("O", actual);
@@ -77,7 +74,6 @@ namespace TicTacToeCSharp.UnitTest
                     "", "X", "O",
                     "", "", "X"
                 },
-                XIsNext = false
             };
 
             var boardAnalyser = new BoardAnalyser();

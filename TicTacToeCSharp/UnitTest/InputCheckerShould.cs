@@ -1,5 +1,6 @@
 ﻿using System;
 using NUnit.Framework;
+using TicTacToeCSharp.DTO;
 using TicTacToeCSharp.Lib;
 
 namespace TicTacToeCSharp.UnitTest
@@ -18,11 +19,14 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnErrorIfPositionIsNotEmpty()
         {
-            var board = new[]
+            var board = new Board
             {
-                "", "O", "",
-                "", "", "",
-                "", "", ""
+                Squares = new[]
+                {
+                    "", "O", "",
+                    "", "", "",
+                    "", "", ""
+                }
             };
             var userInput = 1;
             var ex = Assert.Throws<Exception>(() => _inputChecker.CheckPosition(board, userInput));
@@ -32,11 +36,14 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnErrorIfInputIsOutOfIndex()
         {
-            var board = new[]
+            var board = new Board
             {
-                "", "O", "",
-                "", "", "",
-                "", "", ""
+                Squares = new[]
+                {
+                    "", "O", "",
+                    "", "", "",
+                    "", "", ""
+                }
             };
             var userInput = 9;
             var ex = Assert.Throws<Exception>(() => _inputChecker.IsWithinBoardRange(board, userInput));

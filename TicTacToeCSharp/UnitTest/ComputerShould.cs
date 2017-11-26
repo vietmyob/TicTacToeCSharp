@@ -10,7 +10,7 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnEightToStopUserFromWinning()
         {
-            var computer = new ComputerPlayer();
+            var computer = new ComputerPlayer("X");
             var board = new Board
             {
                 Squares = new[]
@@ -19,7 +19,6 @@ namespace TicTacToeCSharp.UnitTest
                     "X", "X", "",
                     "O", "O", ""
                 },
-                XIsNext = true
             };
 
             var computerMove = computer.Solve(board, "O");
@@ -29,7 +28,7 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnSixToStopUserFromWinning()
         {
-            var computer = new ComputerPlayer();
+            var computer = new ComputerPlayer("X");
             var board = new Board
             {
                 Squares = new[]
@@ -38,7 +37,6 @@ namespace TicTacToeCSharp.UnitTest
                     "O", "X", "X",
                     "", "", ""
                 },
-                XIsNext = true
             };
 
             var computerMove = computer.Solve(board, "O");
@@ -48,7 +46,7 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnTwoToStopUserFromWinning()
         {
-            var computer = new ComputerPlayer();
+            var computer = new ComputerPlayer("X");
             var board = new Board
             {
                 Squares = new[]
@@ -57,7 +55,6 @@ namespace TicTacToeCSharp.UnitTest
                     "X", "O", "",
                     "O", "", ""
                 },
-                XIsNext = true
             };
 
             var computerMove = computer.Solve(board, "O");

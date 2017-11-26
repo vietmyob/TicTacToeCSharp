@@ -19,8 +19,8 @@ namespace TicTacToeCSharp.UnitTest
         [TestCase(5)]
         public void AddUserInput(int index)
         {
-            var inputProcessor = new UserInputProcessor(new InputChecker());
-            inputProcessor.Add(_board.Squares, index, "O");
+            var inputProcessor = new HumanPlayer(new InputChecker(), "O");
+            inputProcessor.Move(_board, index);
             Assert.AreEqual("O", _board.Squares[index]);
         }
     }

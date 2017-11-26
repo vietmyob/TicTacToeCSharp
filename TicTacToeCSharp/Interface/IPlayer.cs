@@ -2,8 +2,8 @@
 
 namespace TicTacToeCSharp.Interface
 {
-    public interface IChecker
+    public interface IPlayer
     {
-        void Validate(Board board, int userInput);
+        void Move(Board board, int index);
     }
 }

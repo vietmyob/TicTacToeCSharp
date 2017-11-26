@@ -52,7 +52,8 @@
     <Compile Include="DTO\Board.cs" />
     <Compile Include="Interface\IChecker.cs" />
     <Compile Include="Lib\BoardAnalyser.cs" />
-    <Compile Include="Lib\UserInputProcessor.cs" />
+    <Compile Include="Interface\IPlayer.cs" />
+    <Compile Include="Lib\HumanPlayer.cs" />
     <Compile Include="Lib\InputChecker.cs" />
     <Compile Include="Lib\BoardConsoleRenderer.cs" />
     <Compile Include="Lib\Config.cs" />

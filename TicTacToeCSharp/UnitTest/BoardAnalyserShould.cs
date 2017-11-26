@@ -20,7 +20,6 @@ namespace TicTacToeCSharp.UnitTest
                     "", "X", "O",
                     "", "", "X"
                 },
-                XIsNext = false
             };
             
             var actual = boardAnalyser.GetAllIndexesOfPlayerInput(board, "X");

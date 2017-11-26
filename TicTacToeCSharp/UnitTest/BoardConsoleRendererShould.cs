@@ -20,7 +20,6 @@ namespace TicTacToeCSharp.UnitTest
                     "", "X", "O",
                     "", "X", "O"
                 },
-                XIsNext = false
             };
 
             var actual = consoleRenderer.Render(board);
@@ -44,7 +43,6 @@ namespace TicTacToeCSharp.UnitTest
                     "O", "X", "X",
                     "", "X", ""
                 },
-                XIsNext = false
             };
 
             var actual = consoleRenderer.Render(board);
