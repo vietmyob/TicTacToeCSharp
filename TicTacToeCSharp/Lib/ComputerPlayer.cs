@@ -44,7 +44,7 @@ namespace TicTacToeCSharp.Lib
 
         public void Move(Board board, int index)
         {
-            throw new NotImplementedException();
+            board.Squares[index] = _computerSymbol;
         }
     }
 }

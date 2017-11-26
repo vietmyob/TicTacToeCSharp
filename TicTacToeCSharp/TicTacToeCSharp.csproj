@@ -60,14 +60,14 @@
     <Compile Include="UnitTest\BoardAnalyserShould.cs" />
     <Compile Include="UnitTest\BoardConsoleRendererShould.cs" />
     <Compile Include="Lib\ComputerPlayer.cs" />
-    <Compile Include="UnitTest\ComputerShould.cs" />
+    <Compile Include="UnitTest\ComputerPlayerShould.cs" />
     <Compile Include="UnitTest\InputCheckerShould.cs" />
     <Compile Include="Lib\SquareConsoleRenderer.cs" />
     <Compile Include="UnitTest\SquareRendererShould.cs" />
-    <Compile Include="UnitTest\UserInputProcessorShould.cs" />
+    <Compile Include="UnitTest\HumanPlayerShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Lib\WinnerReferee.cs" />
-    <Compile Include="UnitTest\RefereeShould.cs" />
+    <Compile Include="UnitTest\WinnerRefereeShould.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

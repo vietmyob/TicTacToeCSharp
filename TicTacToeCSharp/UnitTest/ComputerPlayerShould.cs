@@ -5,7 +5,7 @@ using TicTacToeCSharp.Lib;
 namespace TicTacToeCSharp.UnitTest
 {
     [TestFixture]
-    public class ComputerShould
+    public class ComputerPlayerShould
     {
         [Test]
         public void ReturnEightToStopUserFromWinning()
@@ -59,6 +59,24 @@ namespace TicTacToeCSharp.UnitTest
 
             var computerMove = computer.Solve(board, "O");
             Assert.AreEqual(2, computerMove);
+        }
+
+        [Test]
+        public void AddInputBasedOnIndex()
+        {
+            var computerPlayer = new ComputerPlayer("X");
+            var board = new Board
+            {
+                Squares = new[]
+                {
+                    "", "X", "",
+                    "X", "O", "",
+                    "O", "", ""
+                },
+            };
+
+            computerPlayer.Move(board, 2);
+            Assert.AreEqual("X", board.Squares[2]);
         }
     }
 }

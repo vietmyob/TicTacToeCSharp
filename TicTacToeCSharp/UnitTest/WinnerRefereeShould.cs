@@ -6,7 +6,7 @@ using TicTacToeCSharp.Lib;
 namespace TicTacToeCSharp.UnitTest
 {
     [TestFixture]
-    public class RefereeShould
+    public class WinnerRefereeShould
     {
         private WinnerReferee _winnerReferee;
         [SetUp]

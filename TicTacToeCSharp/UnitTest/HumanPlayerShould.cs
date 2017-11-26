@@ -5,7 +5,7 @@ using TicTacToeCSharp.Lib;
 namespace TicTacToeCSharp.UnitTest
 {
     [TestFixture]
-    public class UserInputProcessorShould
+    public class HumanPlayerShould
     {
         private Board _board;
         [SetUp]
