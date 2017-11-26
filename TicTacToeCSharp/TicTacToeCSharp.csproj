@@ -6,7 +6,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{332363C7-4C2C-4377-AA34-BD126607A603}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TicTacToeCSharp</RootNamespace>
     <AssemblyName>TicTacToeCSharp</AssemblyName>
@@ -53,6 +53,7 @@
     <Compile Include="Interface\IChecker.cs" />
     <Compile Include="Lib\BoardAnalyser.cs" />
     <Compile Include="Interface\IPlayer.cs" />
+    <Compile Include="Lib\ConsoleGame.cs" />
     <Compile Include="Lib\HumanPlayer.cs" />
     <Compile Include="Lib\InputChecker.cs" />
     <Compile Include="Lib\BoardConsoleRenderer.cs" />

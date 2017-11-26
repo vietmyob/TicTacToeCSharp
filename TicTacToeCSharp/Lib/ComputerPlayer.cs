@@ -21,6 +21,11 @@ namespace TicTacToeCSharp.Lib
             _computerSymbol = computerSymbol;
         }
 
+        public void Move(Board board, int index)
+        {
+            board.Squares[index] = _computerSymbol;
+        }
+
         public int Solve(Board board, string humanPlayerSymbol)
         {
             var indexesOfAllUserInput = _boardAnalyser.GetAllIndexesOfPlayerInput(board, humanPlayerSymbol);
@@ -31,20 +36,14 @@ namespace TicTacToeCSharp.Lib
         private int BlockPossibleWinnerLine(List<int> indexesOfAllUserInput)
         {
             var userWinnerLine =
-                _winnerLines.First(winnerLines => !indexesOfAllUserInput.Except(winnerLines).Any());
-            return userWinnerLine.Except(indexesOfAllUserInput).ToList()[0];
+                _winnerLines.Where(winnerLines => !indexesOfAllUserInput.Except(winnerLines).Any());
+            return userWinnerLine.Any() ? userWinnerLine.First().Except(indexesOfAllUserInput).ToList()[0] : 4;
         }
 
         private int RandomGuess(Board board)
         {
             var emptySquares = _boardAnalyser.GetEmptySquares(board);
-
-            return emptySquares.OrderBy(x => _random.Next(board.Squares.Length)).First();
-        }
-
-        public void Move(Board board, int index)
-        {
-            board.Squares[index] = _computerSymbol;
+            return string.IsNullOrEmpty(board.Squares[4]) ? 4 : emptySquares[_random.Next(emptySquares.Count)];
         }
     }
 }

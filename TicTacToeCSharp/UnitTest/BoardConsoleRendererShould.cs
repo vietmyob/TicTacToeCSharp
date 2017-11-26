@@ -27,7 +27,7 @@ namespace TicTacToeCSharp.UnitTest
                            "X|O| " + Environment.NewLine +
                            " |X|O" + Environment.NewLine +
                            " |X|O" + Environment.NewLine +
-                           "-|-|-";
+                           "-|-|-" + Environment.NewLine;
             Assert.AreEqual(expected, actual);
         }
 
@@ -50,7 +50,7 @@ namespace TicTacToeCSharp.UnitTest
                            "X|O|O" + Environment.NewLine +
                            "O|X|X" + Environment.NewLine +
                            " |X| " + Environment.NewLine +
-                           "-|-|-";
+                           "-|-|-" + Environment.NewLine;
             Assert.AreEqual(expected, actual);
         }
     }

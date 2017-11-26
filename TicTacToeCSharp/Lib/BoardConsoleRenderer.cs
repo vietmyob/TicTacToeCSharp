@@ -20,7 +20,7 @@ namespace TicTacToeCSharp.Lib
                    Environment.NewLine +
                    $"{_squareRenderer.Render(board.Squares[6])}|{_squareRenderer.Render(board.Squares[7])}|{_squareRenderer.Render(board.Squares[8])}" +
                    Environment.NewLine +
-                   "-|-|-";
+                   "-|-|-" + Environment.NewLine;
         }
     }
 }
