@@ -12,6 +12,7 @@ namespace TicTacToeCSharp.Lib
         private readonly List<List<int>> _winnerLines;
         private readonly Random _random;
         private readonly string _symbol;
+        private readonly int optimalMove = 4;
 
         public ComputerPlayer(string symbol)
         {
@@ -37,7 +38,7 @@ namespace TicTacToeCSharp.Lib
         {
             var userWinnerLine =
                 _winnerLines.Where(winnerLines => !indexesOfAllUserInput.Except(winnerLines).Any());
-            return userWinnerLine.Any() ? userWinnerLine.First().Except(indexesOfAllUserInput).ToList()[0] : 4;
+            return userWinnerLine.Any() ? userWinnerLine.First().Except(indexesOfAllUserInput).ToList()[0] : optimalMove;
         }
 
         private int RandomGuess(Board board)

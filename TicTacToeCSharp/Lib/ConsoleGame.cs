@@ -15,15 +15,15 @@ namespace TicTacToeCSharp.Lib
         {
             Console.WriteLine("Let's start the game");
 
-            SetUpBoardAndSymbols(out Board board, out string humanPlayerSymbol, out string computerPlayerSymbol);
-            SetUpPlayers(humanPlayerSymbol, computerPlayerSymbol, out ComputerPlayer computerPlayer, out HumanPlayer humanPlayer);
-            SetUpEngine(out BoardConsoleRenderer renderer, out WinnerReferee referee);
+            SetUpBoardAndSymbols(out var board, out var humanPlayerSymbol, out var computerPlayerSymbol);
+            SetUpPlayers(humanPlayerSymbol, computerPlayerSymbol, out var computerPlayer, out var humanPlayer);
+            SetUpEngine(out var renderer, out var referee);
 
             computerPlayer.Move(board, 4);
             Console.WriteLine(renderer.Render(board));
             var winner = Play(board, humanPlayerSymbol, computerPlayerSymbol, computerPlayer, humanPlayer, renderer, referee);
 
-            AnnounceDrawIfNoWinner(winner);
+            referee.AnnounceDrawIfNoWinner(winner);
 
             AllowReplay();
         }
@@ -36,17 +36,17 @@ namespace TicTacToeCSharp.Lib
                 Console.WriteLine("Your turn:");
                 var humanMove = Console.ReadLine();
                 humanPlayer.Move(board, int.Parse(humanMove));
-                winner = referee.CheckWinner(board, humanPlayerSymbol);
                 Console.WriteLine(renderer.Render(board));
-                AnnounceWinner(winner);
+                winner = referee.CheckWinner(board, humanPlayerSymbol);
+                referee.AnnounceWinner(winner);
                 if (!string.IsNullOrEmpty(winner)) break;
                 if (board.Squares.All(x => !string.IsNullOrEmpty(x))) break;
 
                 var computerMove = computerPlayer.Solve(board, humanPlayerSymbol);
                 computerPlayer.Move(board, computerMove);
-                winner = referee.CheckWinner(board, computerPlayerSymbol);
                 Console.WriteLine(renderer.Render(board));
-                AnnounceWinner(winner);
+                winner = referee.CheckWinner(board, computerPlayerSymbol);
+                referee.AnnounceWinner(winner);
                 if (!string.IsNullOrEmpty(winner)) break;
                 if (board.Squares.All(x => !string.IsNullOrEmpty(x))) break;
             }
@@ -73,14 +73,6 @@ namespace TicTacToeCSharp.Lib
             computerPlayerSymbol = "X";
         }
 
-        private static void AnnounceDrawIfNoWinner(string winner)
-        {
-            if (string.IsNullOrEmpty(winner))
-            {
-                Console.WriteLine("It's a draw");
-            }
-        }
-
         private static void AllowReplay()
         {
             Console.WriteLine("Replay? (Y or N)");
@@ -89,14 +81,6 @@ namespace TicTacToeCSharp.Lib
                 Execute();
 
             Console.ReadKey();
-        }
-
-        private static void AnnounceWinner(string winner)
-        {
-            if (!string.IsNullOrEmpty(winner))
-            {
-                Console.WriteLine($"{winner} has won the game");
-            }
         }
     }
 }

@@ -62,25 +62,5 @@ namespace TicTacToeCSharp.UnitTest
             var actual = _winnerReferee.CheckWinner(board, "O");
             Assert.AreEqual("O", actual);
         }
-
-        [Test]
-        public void ReturnIndexesOfAllUserInput()
-        {
-            var board = new Board(3)
-            {
-                Squares = new[]
-                {
-                    "X", "O", "",
-                    "", "X", "O",
-                    "", "", "X"
-                },
-            };
-
-            var boardAnalyser = new BoardAnalyser();
-
-            var actual = boardAnalyser.GetAllIndexesOfPlayerInput(board, "X");
-            var expected = new List<int>{ 0, 4, 8 };
-            Assert.AreEqual(expected, actual);
-        }
     }
 }
