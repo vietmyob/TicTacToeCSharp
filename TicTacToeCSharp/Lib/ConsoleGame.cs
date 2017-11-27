@@ -35,7 +35,14 @@ namespace TicTacToeCSharp.Lib
             {
                 Console.WriteLine("Your turn:");
                 var humanMove = Console.ReadLine();
-                humanPlayer.Move(board, int.Parse(humanMove));
+                try
+                {
+                    humanPlayer.Move(board, int.Parse(humanMove));
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                }
                 Console.WriteLine(renderer.Render(board));
                 winner = referee.CheckWinner(board, humanPlayerSymbol);
                 referee.AnnounceWinner(winner);

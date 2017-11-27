@@ -46,7 +46,7 @@ namespace TicTacToeCSharp.UnitTest
                 }
             };
             var userInput = 9;
-            var ex = Assert.Throws<Exception>(() => _inputChecker.IsWithinBoardRange(board, userInput));
+            var ex = Assert.Throws<IndexOutOfRangeException>(() => _inputChecker.IsWithinBoardRange(board, userInput));
             Assert.That(ex.Message, Is.EqualTo("Selected postion is outside of board range"));
         }
     }

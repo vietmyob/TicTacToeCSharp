@@ -21,7 +21,7 @@ namespace TicTacToeCSharp.Lib
         public void IsWithinBoardRange(Board board, int userInput)
         {
             if (userInput < 0 || userInput > board.Squares.Length - 1)
-                throw new Exception("Selected postion is outside of board range");
+                throw new IndexOutOfRangeException("Selected postion is outside of board range");
         }
     }
 }
