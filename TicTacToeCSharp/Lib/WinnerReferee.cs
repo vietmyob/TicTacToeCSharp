@@ -18,13 +18,9 @@ namespace TicTacToeCSharp.Lib
         public string CheckWinner(Board board, string playerSymbol)
         {
             var indexesOfUserInputs = _boardAnalyser.GetAllIndexesOfPlayerInput(board, playerSymbol);
-            if (_winnerLines.Any(winnerLine => indexesOfUserInputs.Contains(winnerLine[0]) &&
-                                              indexesOfUserInputs.Contains(winnerLine[1]) &&
-                                              indexesOfUserInputs.Contains(winnerLine[2])))
-            {
-                return playerSymbol;
-            }
-            return string.Empty;
+            return _winnerLines.Any(winnerLine => !winnerLine.Except(indexesOfUserInputs).Any())
+                ? playerSymbol
+                : string.Empty;
         }
     }
 }
