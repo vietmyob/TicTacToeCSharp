@@ -44,7 +44,7 @@ namespace TicTacToeCSharp.Lib
         private int RandomGuess(Board board)
         {
             var emptySquares = _boardAnalyser.GetEmptySquares(board);
-            return string.IsNullOrEmpty(board.Squares[4]) ? 4 : emptySquares[_random.Next(emptySquares.Count)];
+            return emptySquares[_random.Next(emptySquares.Count)];
         }
     }
 }
