@@ -11,7 +11,7 @@ namespace TicTacToeCSharp.UnitTest
         public void ReturnEightToStopUserFromWinning()
         {
             var computer = new ComputerPlayer("X");
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {
@@ -29,7 +29,7 @@ namespace TicTacToeCSharp.UnitTest
         public void ReturnSixToStopUserFromWinning()
         {
             var computer = new ComputerPlayer("X");
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {
@@ -47,7 +47,7 @@ namespace TicTacToeCSharp.UnitTest
         public void ReturnTwoToStopUserFromWinning()
         {
             var computer = new ComputerPlayer("X");
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {
@@ -65,7 +65,7 @@ namespace TicTacToeCSharp.UnitTest
         public void AddInputBasedOnIndex()
         {
             var computerPlayer = new ComputerPlayer("X");
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {

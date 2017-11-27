@@ -18,7 +18,7 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnEmptyStringIfNoOneHasWonTheGame()
         {
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {
@@ -34,7 +34,7 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnXIfXHasWonTheGame()
         {
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {
@@ -50,7 +50,7 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnOIfOHasWonTheGame()
         {
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {
@@ -66,7 +66,7 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnIndexesOfAllUserInput()
         {
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {

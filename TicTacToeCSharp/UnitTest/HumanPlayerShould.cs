@@ -11,7 +11,7 @@ namespace TicTacToeCSharp.UnitTest
         [SetUp]
         public void SetUp()
         {
-            _board = new Board();
+            _board = new Board(3);
         }
 
         [Test]

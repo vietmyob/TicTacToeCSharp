@@ -12,7 +12,7 @@ namespace TicTacToeCSharp.UnitTest
         public void ReturnIndexesOfAllUserInput()
         {
             var boardAnalyser = new BoardAnalyser();
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {

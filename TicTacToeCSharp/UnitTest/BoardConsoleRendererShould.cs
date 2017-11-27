@@ -12,7 +12,7 @@ namespace TicTacToeCSharp.UnitTest
         public void RenderBoardBasedOnItsInformation()
         {
             var consoleRenderer = new BoardConsoleRenderer();
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {
@@ -35,7 +35,7 @@ namespace TicTacToeCSharp.UnitTest
         public void RenderBoardBasedOnItsInformationReTest()
         {
             var consoleRenderer = new BoardConsoleRenderer();
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {

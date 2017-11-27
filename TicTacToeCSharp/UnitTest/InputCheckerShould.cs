@@ -19,7 +19,7 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnErrorIfPositionIsNotEmpty()
         {
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {
@@ -36,7 +36,7 @@ namespace TicTacToeCSharp.UnitTest
         [Test]
         public void ReturnErrorIfInputIsOutOfIndex()
         {
-            var board = new Board
+            var board = new Board(3)
             {
                 Squares = new[]
                 {

@@ -6,9 +6,9 @@ namespace TicTacToeCSharp.DTO
     {
         public string[] Squares;
 
-        public Board()
+        public Board(int size)
         {
-            Squares = Enumerable.Repeat("", 9).ToArray();
+            Squares = Enumerable.Repeat("", size * size).ToArray();
         }
     }
 }

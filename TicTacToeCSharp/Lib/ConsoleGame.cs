@@ -14,7 +14,7 @@ namespace TicTacToeCSharp.Lib
         private static void Play()
         {
             Console.WriteLine("Let's start the game");
-            var board = new Board();
+            var board = new Board(3);
             const string humanPlayerSymbol = "O";
             const string computerPlayerSymbol = "X";
             var computerPlayer = new ComputerPlayer(computerPlayerSymbol);
