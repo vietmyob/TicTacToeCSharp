@@ -15,13 +15,10 @@ namespace TicTacToeCSharp.Lib
         {
             Console.WriteLine("Let's start the game");
 
-            SetUpBoardAndSymbols(out var board, out var humanPlayerSymbol, out var computerPlayerSymbol);
-            SetUpPlayers(humanPlayerSymbol, computerPlayerSymbol, out var computerPlayer, out var humanPlayer);
+            SetUpBoardAndSymbols(out var board, out var playerOneSymbol, out var playerTwoSymbol);
+            SetUpPlayers(playerOneSymbol, playerTwoSymbol, out var playerOne, out var playerTwo);
             SetUpEngine(out var renderer, out var referee);
-
-            computerPlayer.Move(board, 4);
-            Console.WriteLine(renderer.Render(board));
-            var winner = Play(board, humanPlayerSymbol, computerPlayerSymbol, computerPlayer, humanPlayer, renderer, referee);
+            var winner = Play(board, playerOneSymbol, playerTwoSymbol, playerOne, playerTwo, renderer, referee);
 
             referee.AnnounceDrawIfNoWinner(winner);
 
@@ -33,26 +30,16 @@ namespace TicTacToeCSharp.Lib
             var winner = string.Empty;
             while (string.IsNullOrEmpty(winner))
             {
-                Console.WriteLine("Your turn:");
-                var humanMove = Console.ReadLine();
-                try
-                {
-                    humanPlayer.Move(board, int.Parse(humanMove));
-                }
-                catch (Exception e)
-                {
-                    Console.WriteLine(e.Message);
-                }
+                computerPlayer.Move(board);
                 Console.WriteLine(renderer.Render(board));
-                winner = referee.CheckWinner(board, humanPlayerSymbol);
+                winner = referee.CheckWinner(board, computerPlayerSymbol);
                 referee.AnnounceWinner(winner);
                 if (!string.IsNullOrEmpty(winner)) break;
                 if (board.Squares.All(x => !string.IsNullOrEmpty(x))) break;
 
-                var computerMove = computerPlayer.Solve(board, humanPlayerSymbol);
-                computerPlayer.Move(board, computerMove);
+                humanPlayer.Move(board);
                 Console.WriteLine(renderer.Render(board));
-                winner = referee.CheckWinner(board, computerPlayerSymbol);
+                winner = referee.CheckWinner(board, humanPlayerSymbol);
                 referee.AnnounceWinner(winner);
                 if (!string.IsNullOrEmpty(winner)) break;
                 if (board.Squares.All(x => !string.IsNullOrEmpty(x))) break;

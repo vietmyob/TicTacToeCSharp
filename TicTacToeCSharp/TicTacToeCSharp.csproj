@@ -65,7 +65,6 @@
     <Compile Include="UnitTest\InputCheckerShould.cs" />
     <Compile Include="Lib\SquareConsoleRenderer.cs" />
     <Compile Include="UnitTest\SquareRendererShould.cs" />
-    <Compile Include="UnitTest\HumanPlayerShould.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Lib\WinnerReferee.cs" />
     <Compile Include="UnitTest\WinnerRefereeShould.cs" />

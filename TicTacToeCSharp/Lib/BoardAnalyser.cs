@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
+using System.Runtime.Remoting;
 using TicTacToeCSharp.DTO;
 
 namespace TicTacToeCSharp.Lib
@@ -16,6 +18,12 @@ namespace TicTacToeCSharp.Lib
                 }
             }
             return indexesOfUserInputs;
+        }
+
+        public string GetOtherPlayerSymBol(Board board, string currentPlayerSymbol)
+        {
+            var otherPlayerSymbol = board.Squares.Where(x => x != currentPlayerSymbol && !string.IsNullOrEmpty(x));
+            return otherPlayerSymbol.Any() ? otherPlayerSymbol.First() : string.Empty;
         }
 
         public List<int> GetEmptySquares(Board board)

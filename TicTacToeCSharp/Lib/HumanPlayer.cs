@@ -1,4 +1,5 @@
-﻿using TicTacToeCSharp.DTO;
+﻿using System;
+using TicTacToeCSharp.DTO;
 using TicTacToeCSharp.Interface;
 
 namespace TicTacToeCSharp.Lib
@@ -14,10 +15,13 @@ namespace TicTacToeCSharp.Lib
             _checker = checker;
         }
 
-        public void Move(Board board, int index)
+        public void Move(Board board)
         {
-            _checker.Validate(board, index);
-            board.Squares[index] = _symbol;
+            Console.WriteLine("Your turn:");
+            var humanMove = Console.ReadLine();
+            var parsedMove = int.Parse(humanMove);
+            _checker.Validate(board, parsedMove);
+            board.Squares[parsedMove] = _symbol;
         }
     }
 }

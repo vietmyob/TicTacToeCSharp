@@ -21,7 +21,7 @@ namespace TicTacToeCSharp.UnitTest
                 },
             };
 
-            var computerMove = computer.Solve(board, "O");
+            var computerMove = computer.Solve(board);
             Assert.AreEqual(8, computerMove);
         }
 
@@ -39,7 +39,7 @@ namespace TicTacToeCSharp.UnitTest
                 },
             };
 
-            var computerMove = computer.Solve(board, "O");
+            var computerMove = computer.Solve(board);
             Assert.AreEqual(6, computerMove);
         }
 
@@ -57,7 +57,7 @@ namespace TicTacToeCSharp.UnitTest
                 },
             };
 
-            var computerMove = computer.Solve(board, "O");
+            var computerMove = computer.Solve(board);
             Assert.AreEqual(2, computerMove);
         }
 
@@ -75,7 +75,7 @@ namespace TicTacToeCSharp.UnitTest
                 },
             };
 
-            computerPlayer.Move(board, 2);
+            computerPlayer.Move(board);
             Assert.AreEqual("X", board.Squares[2]);
         }
     }

@@ -22,14 +22,18 @@ namespace TicTacToeCSharp.Lib
             _symbol = symbol;
         }
 
-        public void Move(Board board, int index)
+        public void Move(Board board)
         {
-            board.Squares[index] = _symbol;
+            var move = Solve(board);
+            board.Squares[move] = _symbol;
         }
 
-        public int Solve(Board board, string humanPlayerSymbol)
+        public int Solve(Board board)
         {
-            var indexesOfAllUserInput = _boardAnalyser.GetAllIndexesOfPlayerInput(board, humanPlayerSymbol);
+            var otherPlayerSymbol = _boardAnalyser.GetOtherPlayerSymBol(board, _symbol);
+            if (string.IsNullOrEmpty(otherPlayerSymbol)) return RandomGuess(board);
+
+            var indexesOfAllUserInput = _boardAnalyser.GetAllIndexesOfPlayerInput(board, otherPlayerSymbol);
             var computerInput = BlockPossibleWinnerLine(indexesOfAllUserInput);
             return string.IsNullOrEmpty(board.Squares[computerInput]) ? computerInput : RandomGuess(board);
         }
